@@ -1,0 +1,30 @@
+{
+  "name": "data_trap",
+  "version": "1.0.0",
+  "main": "bin/index.js",
+  "source": "src/index.ts",
+  "bin": {
+    "datatrap": "bin/index.js"
+  },
+  "repository": "https://github.com/Brain-Development-and-Disorders-Lab/data_trap.git",
+  "author": "Henry Burgess <henryjburg@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf bin .parcel-cache",
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.1",
+    "chokidar": "^3.5.3",
+    "fs-extra": "^10.1.0",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^17.0.38",
+    "@types/yargs": "^17.0.10",
+    "parcel": "^2.6.0"
+  }
+}
