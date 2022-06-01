@@ -1,2 +1,12 @@
 # MacOS
 .DS_Store
+
+# Environment variables
+.env
+
+# Build artefacts
+bin
+.parcel-cache
+
+# Node
+node_modules
