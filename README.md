@@ -4,10 +4,10 @@ A small CLI utility to monitor a data directory and copy any files to a specifie
 
 ## Usage
 
-`datatrap -s <source> -d <destination>`
+`datatrap -s <source> -d <destinations>`
 
 ### Source
 
 - `-s, --source`: The directory of the files that are to be transferred. This is optional, and if it is not specified, the tool will work with files from the current directory.
 
-- `-d, --destination`: The destination of the transferred files. This destination should exist, otherwise the utility will exit. This option is required.
+- `-d, --destinations`: The destinations of the transferred files. One or more destination can be specified, and each destination should exist, otherwise the utility will exit. This option is required.
