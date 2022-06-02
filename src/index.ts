@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-// .env file
-import "dotenv/config";
-
 // File imports
 import fs from "fs-extra";
 import path from "path";
@@ -45,7 +42,7 @@ for (const destinationPath of defaultOptions.destinations) {
   console.log(chalk.green.bold(`Testing access to destination "${destinationPath}"...`));
 
   // Validate the specified remote path, must be a mounted network drive
-  fs.access(destinationPath, function(error) {
+  fs.access(destinationPath, (error) => {
     if (error) {
       console.error(chalk.red.bold(`Could not access destination "${destinationPath}"! Exiting...`));
       exit(1);
