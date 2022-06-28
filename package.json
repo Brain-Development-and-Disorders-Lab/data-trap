@@ -1,12 +1,12 @@
 {
-  "name": "data_trap",
+  "name": "data-trap",
   "version": "1.0.0",
   "main": "bin/index.js",
   "source": "src/index.ts",
   "bin": {
-    "datatrap": "bin/index.js"
+    "data-trap": "bin/index.js"
   },
-  "repository": "https://github.com/Brain-Development-and-Disorders-Lab/data_trap.git",
+  "repository": "https://github.com/Brain-Development-and-Disorders-Lab/data-trap.git",
   "author": "Henry Burgess <henryjburg@gmail.com>",
   "license": "MIT",
   "scripts": {
