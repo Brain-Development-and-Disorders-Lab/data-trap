@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "bin/index.js",
   "source": "src/index.ts",
+  "files": [
+    "bin"
+  ],
   "bin": {
     "data-trap": "bin/index.js"
   },
@@ -13,6 +16,9 @@
     "clean": "rm -rf bin .parcel-cache",
     "watch": "parcel watch",
     "build": "parcel build"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "dependencies": {
     "boxen": "^5.1.2",
