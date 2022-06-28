@@ -64,18 +64,6 @@ const addFile = (addPath: string) => {
   }
 }
 
-/**
- * Apply an update to a file currently being watched by the Chokidar observer instance
- * @param {string} changePath Complete path of the file that has changed
- */
-const changeFile = (changePath: string) => {
-  for (const destinationPath of defaultOptions.destinations) {
-    fs.copy(changePath, path.join(destinationPath, path.basename(changePath)))
-      .then(() => console.log(chalk.blue.bold(`File ${changePath} has been updated.`)))
-      .catch(err => console.error(chalk.red.bold(`Error updating "${changePath}": ${err}`)));
-  }
-}
-
 // Start Chokidar on the source directory
 const observer = chokidar.watch(defaultOptions.source, { persistent: true });
 const changeLog = console.log.bind(console);
@@ -83,5 +71,9 @@ const changeLog = console.log.bind(console);
 // Configure events
 observer
   .on("ready", () => changeLog(chalk.green.bold("Data Trap ready, watching...")))
-  .on("add", changePath => addFile(changePath))
-  .on("change", changePath => changeFile(changePath));
+  .on("add", changePath => addFile(changePath));
+
+// Catch SIGINT on exit
+process.on("SIGINT", () => {
+  observer.close().then(() => console.log(chalk.green.bold("Data Trap closed")));
+});
